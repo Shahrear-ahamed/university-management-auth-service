@@ -20,4 +20,6 @@ app.get('/', async (req: Request, res: Response) => {
   res.send('Hello World!')
 })
 
+// global error handler
+
 export default app
