@@ -1,27 +1,19 @@
-import { NextFunction, Request, Response } from 'express'
+import { ErrorRequestHandler } from 'express'
 import { IGenericErrorMessage } from '../../interfaces/error'
 import config from '../../config'
 import handleValidationError from '../../Errors/handleValidationError'
 import ApiError from '../../Errors/ApiError'
-import { error } from 'winston'
 
-const globalErrorHandler = (
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  err,
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   // pre defined error details
   let statusCode = 500
   let message = 'Something went wrong !'
   let errorMessages: IGenericErrorMessage[] = []
-  const stack = config.env != 'production' ? err?.stack : undefined
+  const stack = config.env != 'production' ? error?.stack : undefined
 
   // check error and generate error messages
-  if (err?.name === 'ValidationError') {
-    const simplifiedError = handleValidationError(err)
+  if (error?.name === 'ValidationError') {
+    const simplifiedError = handleValidationError(error)
 
     // set values
     statusCode = simplifiedError.statusCode
