@@ -1,24 +1,20 @@
 import { RequestHandler } from 'express'
-import userService from './users.service'
+import { UserService } from './user.service'
 
 const createUser: RequestHandler = async (req, res, next) => {
   try {
     const { user } = req.body
 
-    const result = await userService.createUser(user)
+    const result = await UserService.createUser(user)
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     res.status(201).json({
       success: true,
       message: 'User created successfully',
       data: result,
     })
   } catch (e) {
-    next()
+    next(e)
   }
 }
 
-export default {
-  createUser,
-}
+export const UserController = { createUser }
