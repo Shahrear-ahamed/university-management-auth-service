@@ -1,7 +1,5 @@
 import express, { Application, Request, Response } from 'express'
-import cors from 'cors'
-
-// Application routers
+import cors from 'cors' // Application routers
 import globalErrorHandler from './app/middlewares/globalErrorHandler'
 import { UserRoutes } from './app/modules/users/user.route'
 
@@ -19,7 +17,6 @@ app.use('/api/v1/users', UserRoutes)
 
 app.get('/', async (req: Request, res: Response) => {
   res.send('Hello World!')
-  // Promise.reject(new Error('Unhandled rejection'))
 })
 
 // global error handler

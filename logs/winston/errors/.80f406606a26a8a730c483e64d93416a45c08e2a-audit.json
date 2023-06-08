@@ -6,9 +6,9 @@
     "auditLog": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\.80f406606a26a8a730c483e64d93416a45c08e2a-audit.json",
     "files": [
         {
-            "date": 1686242100149,
-            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-08-06-22-error.log",
-            "hash": "a4ddc3316f35a5426e875a1ae73047daf3aa8766169e6a62d1737c57eff17b21"
+            "date": 1686244866377,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-08-06-23-error.log",
+            "hash": "91aff48eb35638054e5a3dcf174800c9da0be66c0806d7b493f33624448f9a13"
         }
     ],
     "hashType": "sha256"
