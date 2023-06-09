@@ -9,6 +9,16 @@
             "date": 1686244866377,
             "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-08-06-23-error.log",
             "hash": "91aff48eb35638054e5a3dcf174800c9da0be66c0806d7b493f33624448f9a13"
+        },
+        {
+            "date": 1686247249486,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-09-06-00-error.log",
+            "hash": "dc5419ecdea06acbcc5b33a694136561c89a9719ac3dca4e9c07135b3a9bc264"
+        },
+        {
+            "date": 1686301745831,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-09-06-15-error.log",
+            "hash": "5f986857b46188f8d88835e1ddb0f6d88f28fd535e7b3d9549d28da257fcc611"
         }
     ],
     "hashType": "sha256"
