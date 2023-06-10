@@ -1,5 +1,6 @@
 import { RequestHandler } from 'express';
 import { AcademicSemesterService } from './academicSemester.service';
+import httpStatus from 'http-status';
 
 const createSemester: RequestHandler = async (req, res, next) => {
   try {
@@ -9,7 +10,7 @@ const createSemester: RequestHandler = async (req, res, next) => {
       academicSemesterData
     );
 
-    res.status(201).json({
+    res.status(httpStatus.CREATED).json({
       success: true,
       message: 'Academic Semester is created successfully',
       data: result,
