@@ -1,5 +1,6 @@
 import { RequestHandler } from 'express';
 import { UserService } from './user.service';
+import httpStatus from 'http-status';
 
 const createUser: RequestHandler = async (req, res, next) => {
   try {
@@ -7,7 +8,7 @@ const createUser: RequestHandler = async (req, res, next) => {
 
     const result = await UserService.createUser(user);
 
-    res.status(201).json({
+    res.status(httpStatus.CREATED).json({
       success: true,
       message: 'User created successfully',
       data: result,
