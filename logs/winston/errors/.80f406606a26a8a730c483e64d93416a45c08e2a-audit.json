@@ -59,6 +59,26 @@
             "date": 1686570176513,
             "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-12-06-17-error.log",
             "hash": "0918710a5d18b325bd8b325fafcdb2265d0fcd3d22e68873bf4c74fc459764bd"
+        },
+        {
+            "date": 1686572104093,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-12-06-18-error.log",
+            "hash": "4093b4cd89a7f05f9335b2874f30e134235b66f83ac2aaf264deea261f886383"
+        },
+        {
+            "date": 1686594536073,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-13-06-00-error.log",
+            "hash": "357f723fc765223664b51dcceb539f429c64452c8d57746c2b775e7b42f335fb"
+        },
+        {
+            "date": 1686665141120,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-13-06-20-error.log",
+            "hash": "c72fe54acc2a3388faba6c3c3b7cc9a86811d954b146bbc482df9b13c062ce83"
+        },
+        {
+            "date": 1686668630119,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-13-06-21-error.log",
+            "hash": "4d5147b5247653cb1a8e56bdbade2dd6269a63a53d9fe978d89ee52667e68895"
         }
     ],
     "hashType": "sha256"
