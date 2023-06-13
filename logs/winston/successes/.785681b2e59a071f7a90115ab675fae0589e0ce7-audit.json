@@ -59,6 +59,26 @@
             "date": 1686570176491,
             "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\successes\\mexemy-2023-12-06-17-success.log",
             "hash": "bd6bc6601fac4fa82f7c3d788ee2492bdd4b236e9a92ae58929a31aacee52e80"
+        },
+        {
+            "date": 1686572104073,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\successes\\mexemy-2023-12-06-18-success.log",
+            "hash": "120c0841be10baaa827bf9cf60195305f4bd550a0c006550d970b758ba98857c"
+        },
+        {
+            "date": 1686594536064,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\successes\\mexemy-2023-13-06-00-success.log",
+            "hash": "b1787f2dc4acd512d54efe922f7010e8c790d33ac3028e4160e8ec89cf365c54"
+        },
+        {
+            "date": 1686665141111,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\successes\\mexemy-2023-13-06-20-success.log",
+            "hash": "9b395f88a7332330f08c286a1810e2a6fc4da1165dac1c496cb9bbceb346e83d"
+        },
+        {
+            "date": 1686668630089,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\successes\\mexemy-2023-13-06-21-success.log",
+            "hash": "82b5b072fc68a013a626244510ebad8cff9b68fd2a8d046cd3d8cb8aeacf8329"
         }
     ],
     "hashType": "sha256"
