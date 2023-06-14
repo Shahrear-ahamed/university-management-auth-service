@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-expressions,no-console,no-unused-vars */
+/* eslint-disable no-unused-expressions,no-console,no-unused-vars,@typescript-eslint/no-unused-vars */
 import { ErrorRequestHandler } from 'express';
 import { IGenericErrorMessage } from '../../interfaces/error';
 import config from '../../config';
