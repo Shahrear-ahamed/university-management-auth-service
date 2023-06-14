@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-expressions,no-console */
+/* eslint-disable no-unused-expressions,no-console,no-unused-vars */
 import { ErrorRequestHandler } from 'express';
 import { IGenericErrorMessage } from '../../interfaces/error';
 import config from '../../config';
@@ -9,7 +9,7 @@ import { ZodError } from 'zod';
 import handleZodError from '../../Errors/handleZodError';
 import handleCastError from '../../Errors/handleCastError';
 
-const globalErrorHandler: ErrorRequestHandler = (error, req, res) => {
+const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   config.env === 'development'
     ? console.log('🚀 __globalErrorHandler', error)
     : errorLogger.error('🚀 __globalErrorHandler', error);
