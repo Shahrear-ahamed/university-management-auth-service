@@ -2,7 +2,7 @@ import {
   IAcademicSearchFilters,
   IAcademicSemester,
 } from './academicSemester.interface';
-import { AcademicSemester } from './academicSemester.mode';
+import { AcademicSemester } from './academicSemester.model';
 import {
   academicSemesterSearchableFields,
   academicSemesterTitleCodeMapper,
@@ -12,7 +12,7 @@ import httpStatus from 'http-status';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import { IGenericResponse } from '../../../interfaces/common';
 import { paginationHelper } from '../../../helpers/paginationHelper';
-import { SortOrder } from 'mongoose'; // create a new data
+import { SortOrder } from 'mongoose';
 
 // create a new data
 const createSemester = async (
