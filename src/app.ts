@@ -39,4 +39,15 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
+// const generateId = async () => {
+//   const academicSemester = {
+//     code: '02',
+//     year: '2025',
+//   };
+//   const testID = await generateStudentId(academicSemester);
+//   console.log(testID);
+// };
+//
+// generateId();
+
 export default app;
