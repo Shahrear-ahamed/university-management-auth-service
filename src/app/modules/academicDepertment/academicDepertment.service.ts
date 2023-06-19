@@ -4,10 +4,10 @@ import {
 } from './academicDepertment.interface';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import { IGenericResponse } from '../../../interfaces/common';
+import { paginationHelper } from '../../../helpers/paginationHelper';
 import { academicDepartmentSearchableFields } from './academicDepertment.constant';
 import { SortOrder } from 'mongoose';
 import { AcademicDepartment } from './academicDepertment.model';
-import { paginationHelper } from '../../../helpers/paginationHelper';
 
 const getAllDepartments = async (
   filters: IAcademicDepartmentFilters,
@@ -71,25 +71,23 @@ const createDepartment = async (
   return (await AcademicDepartment.create(payload)).populate('academicFaculty');
 };
 
-const getSingleDepartment = async (
+const getSingleDepartment = (
   id: string
 ): Promise<IAcademicDepartment | null> => {
-  return await AcademicDepartment.findById(id).populate('academicFaculty');
+  return AcademicDepartment.findById(id).populate('academicFaculty');
 };
 
-const updateDepartment = async (
+const updateDepartment = (
   id: string,
   payload: Partial<IAcademicDepartment>
 ): Promise<IAcademicDepartment | null> => {
-  return await AcademicDepartment.findOneAndUpdate({ _id: id }, payload, {
+  return AcademicDepartment.findOneAndUpdate({ _id: id }, payload, {
     new: true,
   }).populate('academicFaculty');
 };
 
-const deleteDepartment = async (
-  id: string
-): Promise<IAcademicDepartment | null> => {
-  return await AcademicDepartment.findByIdAndDelete(id);
+const deleteDepartment = (id: string): Promise<IAcademicDepartment | null> => {
+  return AcademicDepartment.findByIdAndDelete(id);
 };
 
 export const AcademicDepartmentService = {
