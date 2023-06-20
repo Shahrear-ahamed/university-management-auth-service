@@ -5,6 +5,8 @@ import { IGenericResponse } from '../../../interfaces/common';
 import { paginationHelper } from '../../../helpers/paginationHelper';
 import { studentSearchableFields } from './student.constant';
 import { Student } from './student.model';
+import ApiError from '../../../Errors/ApiError';
+import httpStatus from 'http-status';
 
 const getAllStudents = async (
   filters: IStudentFilters,
@@ -91,7 +93,44 @@ const updateStudent = async (
   id: string,
   payload: Partial<IStudent>
 ): Promise<IStudent | null> => {
-  return Student.findOneAndUpdate({ _id: id }, payload, { new: true });
+  // find is a student has or not
+  const isExist = await Student.findOne({ id });
+
+  if (!isExist) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Student not found', '');
+  }
+
+  // set values
+  const { name, guardian, localGuardian, ...studentData } = payload;
+  const updatedStudentData = { ...studentData };
+
+  // dynamically change
+
+  if (name && Object.keys(name).length > 0) {
+    Object.keys(name).forEach(key => {
+      const nameKey = `name.${key}`;
+      (updatedStudentData as any)[nameKey] = name[key as keyof typeof name];
+    });
+  }
+  if (guardian && Object.keys(guardian).length > 0) {
+    Object.keys(guardian).forEach(key => {
+      const guardianKey = `guardian.${key}`;
+      (updatedStudentData as any)[guardianKey] =
+        guardian[key as keyof typeof guardian];
+    });
+  }
+  if (localGuardian && Object.keys(localGuardian).length > 0) {
+    Object.keys(localGuardian).forEach(key => {
+      const localGuardianKey = `localGuardian.${key}`;
+      (updatedStudentData as any)[localGuardianKey] =
+        localGuardian[key as keyof typeof localGuardian];
+    });
+  }
+
+  // update data and return updated value
+  return Student.findOneAndUpdate({ id }, updatedStudentData, {
+    new: true,
+  });
 };
 const deleteStudent = (id: string): Promise<IStudent | null> => {
   return Student.findByIdAndDelete(id)
