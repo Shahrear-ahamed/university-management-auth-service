@@ -194,6 +194,11 @@
             "date": 1687241086121,
             "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-20-06-12-error.log",
             "hash": "5a5597efc9fce10a6e7b7809c4de569bbdd477ff5bb136d3f7e304e34cb352cf"
+        },
+        {
+            "date": 1687262061387,
+            "name": "E:\\Development\\Level_2_course\\personal_project\\university-management\\university-management-auth-service\\logs\\winston\\errors\\mexemy-2023-20-06-17-error.log",
+            "hash": "111efe092efa0645225ae6c3174f2ef7560bb54b5eef0cadaba66b87b3f9f293"
         }
     ],
     "hashType": "sha256"

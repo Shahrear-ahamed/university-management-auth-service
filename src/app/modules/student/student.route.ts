@@ -1,7 +1,7 @@
 import express from 'express';
-import validationRequest from '../../middlewares/validationRequest';
 import { StudentController } from './student.controller';
-import { UserValidation } from '../user/user.validation';
+import { StudentValidation } from './student.validation';
+import validationRequest from '../../middlewares/validationRequest';
 
 const router = express.Router();
 
@@ -10,7 +10,7 @@ router.get('/:id', StudentController.getSingleStudent);
 
 router.patch(
   '/:id',
-  validationRequest(UserValidation.createUserZodSchema),
+  validationRequest(StudentValidation.updateStudentZodSchema),
   StudentController.updateStudent
 );
 

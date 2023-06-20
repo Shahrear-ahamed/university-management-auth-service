@@ -36,7 +36,7 @@ const getSingleStudent = catchAsync(async (req: Request, res: Response) => {
   const result = await StudentService.getSingleStudent(id);
 
   sendResponse<IStudent>(res, {
-    statusCode: httpStatus.CREATED,
+    statusCode: httpStatus.OK,
     status: true,
     message: 'Student retrieved successfully',
     data: result,
@@ -51,7 +51,7 @@ const updateStudent = catchAsync(async (req: Request, res: Response) => {
   const result = await StudentService.updateStudent(id, studentData);
 
   sendResponse<IStudent>(res, {
-    statusCode: httpStatus.CREATED,
+    statusCode: httpStatus.OK,
     status: true,
     message: 'Student updated successfully',
     data: result,
@@ -65,7 +65,7 @@ const deleteStudent = catchAsync(async (req: Request, res: Response) => {
   const result = await StudentService.deleteStudent(id);
 
   sendResponse<IStudent>(res, {
-    statusCode: httpStatus.CREATED,
+    statusCode: httpStatus.OK,
     status: true,
     message: 'Student delete successfully',
     data: result,
