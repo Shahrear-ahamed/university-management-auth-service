@@ -1,7 +1,7 @@
 import { model, Schema } from 'mongoose';
 import { IStudent, StudentModel } from './student.interface';
 
-export const StudentSchema = new Schema<IStudent, StudentModel>(
+const StudentSchema = new Schema<IStudent, StudentModel>(
   {
     id: {
       type: String,

@@ -44,16 +44,16 @@ const getAllDepartments = async (
   if (sortBy && sortOrder) {
     sortConditions[sortBy] = sortOrder;
   }
-  const whereConditions =
+  const whereCondition =
     andConditions.length > 0 ? { $and: andConditions } : {};
 
-  const result = await AcademicDepartment.find(whereConditions)
+  const result = await AcademicDepartment.find(whereCondition)
     .populate('academicFaculty')
     .sort(sortConditions)
     .skip(skip)
     .limit(limit);
 
-  const total = await AcademicDepartment.countDocuments();
+  const total = await AcademicDepartment.countDocuments(whereCondition);
 
   return {
     meta: {
