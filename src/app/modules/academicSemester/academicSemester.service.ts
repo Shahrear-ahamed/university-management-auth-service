@@ -75,7 +75,7 @@ const getAllSemesters = async (
     .skip(skip);
 
   // total documents
-  const total = await AcademicSemester.countDocuments();
+  const total = await AcademicSemester.countDocuments(whereCondition);
 
   return {
     meta: {

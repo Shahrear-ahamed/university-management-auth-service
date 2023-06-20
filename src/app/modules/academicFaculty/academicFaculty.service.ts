@@ -49,14 +49,14 @@ const getAllFaculties = async (
   if (sortBy && sortOrder) {
     sortConditions[sortBy] = sortOrder;
   }
-  const whereConditions =
+  const whereCondition =
     andConditions.length > 0 ? { $and: andConditions } : {};
 
   // total number of data
-  const total = await AcademicFaculty.countDocuments();
+  const total = await AcademicFaculty.countDocuments(whereCondition);
 
   // result
-  const result = await AcademicFaculty.find(whereConditions)
+  const result = await AcademicFaculty.find(whereCondition)
     .sort(sortBy)
     .skip(skip)
     .limit(limit);
