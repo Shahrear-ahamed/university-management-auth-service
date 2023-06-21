@@ -1,13 +1,13 @@
 import express from 'express';
-import validateRequest from '../../middlewares/validateRequest';
 import { ManagementDepartmentController } from './managementDepartment.controller';
 import { ManagementDepartmentValidation } from './managementDepartment.validation';
+import validationRequest from '../../middlewares/validationRequest';
 
 const router = express.Router();
 
 router.post(
   '/create-department',
-  validateRequest(
+  validationRequest(
     ManagementDepartmentValidation.createManagementDepartmentZodSchema
   ),
   ManagementDepartmentController.createDepartment
@@ -17,7 +17,7 @@ router.get('/:id', ManagementDepartmentController.getSingleDepartment);
 
 router.patch(
   '/:id',
-  validateRequest(
+  validationRequest(
     ManagementDepartmentValidation.updateManagementDepartmentZodSchema
   ),
   ManagementDepartmentController.updateDepartment
