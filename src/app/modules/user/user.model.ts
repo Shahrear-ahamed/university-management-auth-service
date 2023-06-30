@@ -60,11 +60,16 @@ userSchema.methods.isPasswordMatched = async function (
 };
 
 // hash password
+// User.create() or user.save()
 userSchema.pre('save', async function (next) {
   this.password = await bcrypt.hash(
     this.password,
     Number(config.bcrypt_salt_round)
   );
+
+  if (!this.needPasswordChange) {
+    this.passwordChangedAt = new Date();
+  }
 
   next();
 });

@@ -10,7 +10,6 @@ import httpStatus from 'http-status';
 import { JwtPayload, Secret } from 'jsonwebtoken';
 import config from '../../../config';
 import { jwtHelper } from '../../../helpers/jwtHelper';
-import bcrypt from 'bcrypt';
 
 const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
   const { id, password } = payload;
@@ -99,8 +98,12 @@ const changePassword = async (
 
   // check user exist
   const userInstance = new User();
-  const isUserExist = await userInstance.isUserExist(user?.userId);
+  // const isUserExist = await userInstance.isUserExist(user?.userId);
 
+  // alternate way
+  const isUserExist = await User.findOne({ id: user?.userId }).select(
+    '+password'
+  );
   if (!isUserExist) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User does not found', '');
   }
@@ -117,19 +120,26 @@ const changePassword = async (
     );
   }
 
-  // hash password before saving
-  const hashedPassword = await bcrypt.hash(
-    newPassword,
-    Number(config.bcrypt_salt_round)
-  );
+  // // hash password before saving
+  // const hashedPassword = await bcrypt.hash(
+  //   newPassword,
+  //   Number(config.bcrypt_salt_round)
+  // );
+  //
+  // const updatedData = {
+  //   password: hashedPassword,
+  //   needPasswordChange: false,
+  //   passwordChangedAt: new Date(),
+  // };
+  //
+  // await User.findOneAndUpdate({ id: user?.userId }, updatedData);
 
-  const updatedData = {
-    password: hashedPassword,
-    needPasswordChange: false,
-    passwordChangedAt: new Date(),
-  };
+  // alternate way
+  isUserExist.password = newPassword;
+  isUserExist.needPasswordChange = false;
 
-  await User.findOneAndUpdate({ id: user?.userId }, updatedData);
+  // save()
+  isUserExist.save();
 };
 
 export const AuthService = { loginUser, refreshToken, changePassword };
