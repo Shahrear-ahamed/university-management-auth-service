@@ -10,7 +10,7 @@ const auth =
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       // get authorization token
-      const authToken = req.headers?.authorization;
+      const authToken = req.headers?.authorization?.split(' ')[1];
 
       if (!authToken) {
         throw new ApiError(
@@ -29,7 +29,7 @@ const auth =
 
       req.user = verifiedUser;
 
-      // role based auth
+      // role-based auth
       if (requiredRoles.length && !requiredRoles.includes(verifiedUser?.role)) {
         throw new ApiError(httpStatus.FORBIDDEN, 'Forbidden', '');
       }

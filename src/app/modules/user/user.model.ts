@@ -19,6 +19,9 @@ const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
       required: true,
       select: 0,
     },
+    passwordChangedAt: {
+      type: Date,
+    },
     needPasswordChange: {
       type: Boolean,
       default: true,
